@@ -22,7 +22,7 @@ import {
   tsconfigjson,
 } from "./template";
 
-export async function extension(n: string, d: string) {
+export async function extension(n: string, d: string, l: string) {
   if (n && d) {
     const __root = join(d);
 
@@ -57,7 +57,7 @@ export async function extension(n: string, d: string) {
       join(__root, "test/helper/", "index.ts")
     );
 
-    indexF.write(index(n), (err) => {
+    indexF.write(index(n, l), (err) => {
       if (err) throw err;
       indexF.close();
     });

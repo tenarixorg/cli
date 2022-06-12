@@ -1,5 +1,6 @@
 export const index = (
-  name: string
+  name: string,
+  lang: string
 ) => `import { AppContent, GetContent, Parser } from "@tenarix/extension";
 import { _details } from "./details";
 import { _library } from "./library";
@@ -13,7 +14,7 @@ export default (getContent: GetContent, parser: Parser): AppContent => {
   const read = _read(getContent, parser);
   return {
     name: "${name}",
-    lang: "",
+    lang: "${lang}",
     details,
     home,
     library,

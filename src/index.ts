@@ -44,7 +44,13 @@ async function main(arg: string, help: boolean) {
         message: "Folder:",
         default: arg || "extension",
       },
+      {
+        type: "input",
+        name: "lang",
+        message: "Language:",
+        default: "en",
+      },
     ]);
-    extension(answers2.name, answers2.folder);
+    extension(answers2.name, answers2.folder, answers2.lang);
   }
 }
