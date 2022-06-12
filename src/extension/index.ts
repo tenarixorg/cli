@@ -9,6 +9,7 @@ import {
   thome,
   index,
   tindex,
+  readme,
   thelper,
   details,
   library,
@@ -39,6 +40,7 @@ export async function extension(n: string, d: string) {
     const gitignoreF = fs.createWriteStream(join(__root, ".gitignore"));
     const npmignoreF = fs.createWriteStream(join(__root, ".npmignore"));
     const jestconfigF = fs.createWriteStream(join(__root, "jest.config.js"));
+    const readmeF = fs.createWriteStream(join(__root, "README.md"));
     fs.mkdirSync(join(__root, "test/helper/"), { recursive: true });
     const tindexF = fs.createWriteStream(
       join(__root, "test/", "index.spec.ts")
@@ -138,6 +140,11 @@ export async function extension(n: string, d: string) {
     jestconfigF.write(jestconfig, (err) => {
       if (err) throw err;
       jestconfigF.close();
+    });
+
+    readmeF.write(readme, (err) => {
+      if (err) throw err;
+      readmeF.close();
     });
 
     console.log("initializing git repo...");
