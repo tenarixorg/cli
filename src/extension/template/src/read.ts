@@ -1,8 +1,8 @@
 export const read = `import { GetContent, Parser, Read } from "@tenarix/extension";\n
 export const _read = (content: GetContent, parser: Parser) => {
-  return async (id: string): Promise<Read> => {
+  return async (id: string, execPath: string): Promise<Read> => {
     const url = "https://baseurl/read/using/id";
-    const { innerHTML } = await content(url);
+    const { innerHTML } = await content(url, execPath);
     const $ = parser(innerHTML);
     return {
       id: "",
