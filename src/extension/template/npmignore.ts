@@ -1,0 +1,9 @@
+export const npmignore = `.env
+src/
+test/
+.github/
+coverage/
+jest.config.js
+tsconfig.json
+yarn.lock
+CODE_OF_CONDUCT.md`;
