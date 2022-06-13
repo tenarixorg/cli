@@ -1,4 +1,4 @@
-export const tlibrary = `import { content, parser } from "@tenarix/extension";
+export const tlibrary = `import { content, parser } from "@tenarix/core";
 import { libraryFilters } from "./helper";
 import { _library } from "../src/library";
 

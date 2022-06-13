@@ -1,4 +1,4 @@
-export const tdetails = `import { parser, content } from "@tenarix/extension";
+export const tdetails = `import { parser, content } from "@tenarix/core";
 import { details_route } from "./helper";
 import { _details } from "../src/details";
 

@@ -1,7 +1,6 @@
-export const index = (
-  name: string,
-  lang: string
-) => `import { AppContent, GetContent, Parser } from "@tenarix/extension";
+export const index = (name: string, lang: string) => {
+  name = name.replace(/\s/g, "_").toLowerCase();
+  return `import { AppContent, GetContent, Parser } from "@tenarix/core";
 import { _details } from "./details";
 import { _library } from "./library";
 import { _home } from "./home";
@@ -14,7 +13,7 @@ export default (getContent: GetContent, parser: Parser): AppContent => {
   const read = _read(getContent, parser);
   return {
     name: "${name}",
-    lang: "${lang}",
+    lang: "${lang.toLowerCase()}",
     details,
     home,
     library,
@@ -22,6 +21,7 @@ export default (getContent: GetContent, parser: Parser): AppContent => {
   };
 };
 `;
+};
 
 export * from "./details";
 export * from "./home";

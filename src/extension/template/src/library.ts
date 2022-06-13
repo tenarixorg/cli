@@ -1,4 +1,4 @@
-export const library = `import { Filters, GetContent, Library, Parser } from "@tenarix/extension";\n
+export const library = `import { Filters, GetContent, Library, Parser } from "@tenarix/core";\n
 const libraryParams = (page: string, filters?: Filters) => {
   return "https://baseurl?doSearch&&usingPage&&filters";
 };

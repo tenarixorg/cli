@@ -1,4 +1,4 @@
-export const tread = `import { content, parser } from "@tenarix/extension";
+export const tread = `import { content, parser } from "@tenarix/core";
 import { readId } from "./helper";
 import { _read } from "../src/read";
 

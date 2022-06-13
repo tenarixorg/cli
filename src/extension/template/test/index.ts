@@ -1,5 +1,5 @@
 export const tindex = `import extension from "../src";
-import { parser, content } from "@tenarix/extension";
+import { parser, content } from "@tenarix/core";
 
 const base = extension(content, parser);
 

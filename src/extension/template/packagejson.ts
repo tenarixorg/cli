@@ -1,14 +1,13 @@
 export const packagejson = (name: string) => `{
-  "name": "${name}",
+  "name": "${name.toLowerCase()}",
   "version": "1.0.0",
   "main": "dist/index.js",
-  "types": "dist/index.d.js",
   "scripts": {
     "test": "jest",
     "build": "tsc"
   },
   "dependencies": {
-    "@tenarix/extension": "^1.0.0"
+    "@tenarix/core": "^1.0.0"
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",

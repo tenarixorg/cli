@@ -1,4 +1,4 @@
-export const thome = `import { parser, content } from "@tenarix/extension";
+export const thome = `import { parser, content } from "@tenarix/core";
 import { _home } from "../src/home";
 
 const home = _home(content, parser);
