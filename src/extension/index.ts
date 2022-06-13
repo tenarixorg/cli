@@ -1,6 +1,7 @@
 import fs from "fs";
-import { join } from "path";
 import git from "simple-git";
+import { readme, npmignore, gitignore, tsconfigjson } from "../common";
+import { join } from "path";
 import {
   env,
   read,
@@ -9,22 +10,22 @@ import {
   thome,
   index,
   tindex,
-  readme,
   thelper,
   details,
   library,
   tdetails,
   tlibrary,
-  npmignore,
-  gitignore,
   jestconfig,
   packagejson,
-  tsconfigjson,
 } from "./template";
 
-export async function extension(n: string, d: string, l: string) {
-  if (n && d) {
-    const __root = join(d);
+export async function extension(name: string, dir: string, lang: string) {
+  if (name && dir && lang) {
+    if (lang.length !== 2) {
+      console.log("Language id must be 2 characters long.");
+      return;
+    }
+    const __root = join(dir);
 
     console.log("creating files...");
 
@@ -57,7 +58,7 @@ export async function extension(n: string, d: string, l: string) {
       join(__root, "test/helper/", "index.ts")
     );
 
-    indexF.write(index(n, l), (err) => {
+    indexF.write(index(name, lang), (err) => {
       if (err) throw err;
       indexF.close();
     });
@@ -112,7 +113,7 @@ export async function extension(n: string, d: string, l: string) {
       thelperF.close();
     });
 
-    packageF.write(packagejson(d === "." ? n : d), (err) => {
+    packageF.write(packagejson(name), (err) => {
       if (err) throw err;
       packageF.close();
     });
