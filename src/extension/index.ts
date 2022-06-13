@@ -113,7 +113,7 @@ export async function extension(name: string, dir: string, lang: string) {
       thelperF.close();
     });
 
-    packageF.write(packagejson(name), (err) => {
+    packageF.write(packagejson(dir), (err) => {
       if (err) throw err;
       packageF.close();
     });

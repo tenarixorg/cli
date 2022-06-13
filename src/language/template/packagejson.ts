@@ -7,7 +7,7 @@ export const packagejson = (id: string) => `{
     "build": "tsc"
   },
   "dependencies": {
-    "@tenarix/core": "^1.0.0"
+    "@tenarix/core": "^1.1.0"
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",
