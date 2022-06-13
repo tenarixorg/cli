@@ -3,6 +3,7 @@
 import { extension } from "./extension";
 
 import { prompt } from "inquirer";
+import { language } from "./language";
 
 const arg = process.argv[2];
 
@@ -15,7 +16,7 @@ main(farg, help);
 async function main(arg: string, help: boolean) {
   if (help) {
     console.log("\nUsage:\n");
-    console.log("@tenarix/cli [folder] [options]");
+    console.log("@tenarix/cli [options]");
     console.log("\nOptions:\n");
     console.log("-h, --help", "\t\t", "Show this help message.");
     return;
@@ -31,7 +32,7 @@ async function main(arg: string, help: boolean) {
   ]);
 
   if (answers1.action === "Extension") {
-    const answers2 = await prompt([
+    const answers = await prompt([
       {
         type: "input",
         name: "name",
@@ -51,6 +52,23 @@ async function main(arg: string, help: boolean) {
         default: "en",
       },
     ]);
-    extension(answers2.name, answers2.folder, answers2.lang);
+    await extension(answers.name, answers.folder, answers.lang);
+  }
+  if (answers1.action === "Language") {
+    const answers = await prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "Language name:",
+        default: "English",
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "ID:",
+        default: arg || "en",
+      },
+    ]);
+    await language(answers.name, answers.id);
   }
 }
