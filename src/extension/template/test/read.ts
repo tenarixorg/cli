@@ -1,8 +1,8 @@
-export const tread = `import { content, parser } from "@tenarix/core";
+export const tread = `import { content, parser, http } from "@tenarix/core";
 import { readId } from "./helper";
 import { _read } from "../src/read";
 
-const read = _read(content, parser);
+const read = _read(content, parser, http);
 
 jest.setTimeout(40000);
 

@@ -1,8 +1,8 @@
-export const tlibrary = `import { content, parser } from "@tenarix/core";
+export const tlibrary = `import { content, parser, http } from "@tenarix/core";
 import { libraryFilters } from "./helper";
 import { _library } from "../src/library";
 
-const library = _library(content, parser);
+const library = _library(content, parser, http);
 
 jest.setTimeout(40000);
 

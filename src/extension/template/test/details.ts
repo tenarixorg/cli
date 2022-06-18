@@ -1,8 +1,8 @@
-export const tdetails = `import { parser, content } from "@tenarix/core";
+export const tdetails = `import { parser, content, http } from "@tenarix/core";
 import { details_route } from "./helper";
 import { _details } from "../src/details";
 
-const details = _details(content, parser);
+const details = _details(content, parser, http);
 
 jest.setTimeout(40000);
 

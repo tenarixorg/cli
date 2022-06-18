@@ -1,7 +1,7 @@
-export const thome = `import { parser, content } from "@tenarix/core";
+export const thome = `import { parser, content, http } from "@tenarix/core";
 import { _home } from "../src/home";
 
-const home = _home(content, parser);
+const home = _home(content, parser, http);
 
 jest.setTimeout(40000);
 

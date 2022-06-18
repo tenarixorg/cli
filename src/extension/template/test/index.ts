@@ -1,7 +1,7 @@
 export const tindex = `import extension from "../src";
-import { parser, content } from "@tenarix/core";
+import { parser, content,http } from "@tenarix/core";
 
-const base = extension(content, parser);
+const base = extension(content, parser, http);
 
 describe("Extension", () => {
   test("should be a valid extension", () => {
