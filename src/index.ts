@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
 import { extension } from "./extension";
-
-import { prompt } from "inquirer";
 import { language } from "./language";
+import { prompt } from "inquirer";
 
 const arg = process.argv[2];
 
@@ -42,7 +41,7 @@ async function main(arg: string, help: boolean) {
       {
         type: "input",
         name: "folder",
-        message: "Folder:",
+        message: "Package name:",
         default: arg || "extension",
       },
       {
