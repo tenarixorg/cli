@@ -23,7 +23,7 @@ export async function extension(name: string, dir: string, lang: string) {
 
     const pkg = JSON.parse(pkg_r.toString());
 
-    pkg.name = dir;
+    pkg.name = `@tenarix-ext/${dir}`;
 
     const pkg_w = fs.createWriteStream(join(__root, "package.json"));
 
